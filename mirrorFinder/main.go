@@ -37,7 +37,7 @@ func main() {
 		response := findFastest(mirrors.MirrorList)
 		respJSON, _ := json.Marshal(response)
 		w.Header().Set("Content-Type", "application/json")
-		write, err := w.Write(respJSON)
+		w, err := w.Write(respJSON)
 		if err != nil {
 			return
 		}
