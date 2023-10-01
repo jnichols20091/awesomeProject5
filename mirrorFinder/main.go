@@ -37,10 +37,7 @@ func main() {
 		response := findFastest(mirrors.MirrorList)
 		respJSON, _ := json.Marshal(response)
 		w.Header().Set("Content-Type", "application/json")
-		w, err := w.Write(respJSON)
-		if err != nil {
-			return
-		}
+		w.Write(respJSON)
 	})
 	port := ":8000"
 	server := &http.Server{
